@@ -1,0 +1,16 @@
+#!/bin/bash
+# RSlaSt
+# Bash script for display last RSS news titles
+#
+# Author: Kurashov Artem
+# License: GNU GPLv3
+#
+if [ "$#" -lt 1 ]; then
+echo "usage: `basename $0` file_with_RSS_URLS_list"
+exit
+fi
+for itask in `cat $1`
+do
+wget -q -O /dev/stdout $itask | grep \<title\> | head -n 2 | tail -n 1 | \
+sed 's/<\/title>.*$//;s/^.*>//';
+done

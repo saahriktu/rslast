@@ -1,0 +1,9 @@
+RSlaSt
+Bash script for display last RSS news titles
+
+Usage: rslast file_with_RSS_URLS_list
+
+File with RSS URLs - text file with same structure as "wget -i" want.
+
+Author: Kurashov Artem
+License: GNU GPLv3
